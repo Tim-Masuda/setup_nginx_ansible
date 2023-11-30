@@ -1,0 +1,24 @@
+---
+- name: Files to Nginx Server
+  file:
+    path: /var/www/test-test-tt.site
+    state: directory
+    mode: 0755
+
+- name: Copy files to Nginx Server
+  copy:
+    src: index.html
+    dest: /var/www/test-test-tt.site/
+
+- name: Copy files to Nginx Server
+  copy:
+    src: debian.png
+    dest: /var/www/test-test-tt.site/
+
+- name: Copy files to Nginx Server
+  copy:
+    src: kittyk.png
+    dest: /var/www/test-test-tt.site/
+  notify:
+    - Reload Nginx
+

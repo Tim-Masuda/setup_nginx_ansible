@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #15171D;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .large-image {
+      display: block;
+      margin: 0;
+      max-width: 100%; /* Увеличение максимальной ширины изображения */
+      height: auto;
+    }
+
+    .small-image {
+      position: absolute;
+      bottom: 10px;
+      left: 1px;
+      max-width: 50px; /* Уменьшение максимальной ширины изображения в 3 раза */
+      height: auto;
+    }
+
+    .center-image {
+      display: block;
+      margin: 0 auto;
+      max-width:  300px; /* Увеличение максимальной ширины изображения в 2 раза */
+      height: auto;
+    }
+  </style>
+  <title>Your Website</title>
+</head>
+<body>
+    <div class="kk">
+        <img src="kittyk.png" alt="Large Image" class="small-image">
+    </div>
+  <div class="container">
+    <img src="debian.png" alt="Small Image" class="center-image">
+  </div>
+</body>
+</html>

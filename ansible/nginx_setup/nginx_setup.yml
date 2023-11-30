@@ -1,0 +1,8 @@
+---
+- name: Setup Nginx
+  hosts: PROD_SERVER
+  become: true
+  roles:
+    - nginx_install
+    - nginx_sites
+    - nginx_www

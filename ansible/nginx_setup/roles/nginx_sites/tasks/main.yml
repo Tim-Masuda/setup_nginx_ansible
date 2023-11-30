@@ -1,0 +1,22 @@
+
+---
+- name: Configuration sites-available and sites-enabled
+  template:
+    src: test-test-tt.site.j2
+    dest: /etc/nginx/sites-available/test-test-tt.site
+  notify:
+    - Reload Nginx
+
+- name: Check configuration and symbolic link status
+  shell: nginx -t
+  notify:
+    - Reload Nginx
+
+- name: Creating a symbolic link
+  file:
+    src: /etc/nginx/sites-available/test-test-tt.site
+    dest: /etc/nginx/sites-enabled/test-test-tt.site
+    state: link
+  notify:
+    - Reload Nginx
+

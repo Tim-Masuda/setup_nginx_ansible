@@ -1,0 +1,16 @@
+---
+# tasks file for nginx_install
+
+- name: Install Nginx on nginx_serv
+  apt:
+    name: nginx
+    state: present
+
+- name: Check Nginx
+  shell: systemctl status nginx
+  register: check_var
+
+- debug:
+    var: check_var.stdout_lines
+
+
